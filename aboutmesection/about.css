@@ -1,0 +1,75 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* kills horizontal scroll */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.about {
+  display: flex;
+  justify-content: center; /* vertical centering */
+  align-items: center; /* horizontal centering */
+  flex-direction: column;
+  text-align: justify;
+}
+.about p {
+  padding-top: 10px;
+}
+/* Small devices (phones) */
+@media (max-width: 480px) {
+  .about {
+    padding: 20px 10px;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+  }
+  .about p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .about {
+    padding: 25px 15px;
+  }
+  .about h2 {
+    font-size: 1.8rem;
+  }
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 769px) {
+  .about {
+    padding: 40px 20px;
+  }
+  .about h2 {
+    font-size: 2.2rem;
+  }
+  .about p {
+    font-size: 1.1rem;
+  }
+}
+
+.socials a {
+  cursor: pointer;
+  background-color: rgb(255, 255, 254);
+  border-radius: 50%;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: black;
+}
