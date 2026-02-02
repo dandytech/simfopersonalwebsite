@@ -1,0 +1,24 @@
+#craps-game {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../images/craps.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.craps-game-title {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.craps-game-container {
+  width: min(700px, 80vw);
+  height: min(500px, 57vw);
+  border: solid white 2px;
+  margin: 100px auto 0 auto;
+  background-image: url("../images/craspTable.png");
+  background-size: cover;
+  background-position: center top;
+}
