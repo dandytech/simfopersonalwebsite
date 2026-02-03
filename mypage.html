@@ -20,11 +20,8 @@
       function makeDreamComeTrue() {
         alert("Welcome! Combining development with quality-driven testing 🚀");
       }
-
-      function registerCrapsPlayer() {
-        let crapsUsername = (document.getElementById("craps-username-input").value);
-      }
     </script>
+    <script src="./crapsgames/crapsgame.js"></script>
   </head>
   <body>
     <div class="main-section">
@@ -85,15 +82,22 @@
     <div class="main-section" id="craps-game">
       <h1 class="craps-game-title">Crasp Casino Game</h1>
       <div class="craps-game-container">
-        <div class="craps-registration-pane">
+
+        <div id="craps-registration-pane">
+      
           <div>Enter Username to begin</div>
+         
           <div>
             <input class="craps-registration-input" id="craps-username-input" />
           </div>
+
           <div>
             <button onclick="registerCrapsPlayer()">Continue</button>
           </div>
+          
         </div>
+        
+        <div id="craps-main-section">MAIN SECTION HERE</div>
       </div>
     </div>
   </body>

@@ -22,7 +22,7 @@
   background-size: cover;
   background-position: center top;
 }
-.craps-registration-pane {
+#craps-registration-pane {
   margin-top: 55px;
   text-align: center;
 }
@@ -41,4 +41,8 @@
 
 .craps-registration-continue {
   margin-top: 25px;
+}
+
+#craps-main-section {
+  display: none;
 }
