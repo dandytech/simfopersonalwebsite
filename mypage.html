@@ -82,11 +82,9 @@
     <div class="main-section" id="craps-game">
       <h1 class="craps-game-title">Crasp Casino Game</h1>
       <div class="craps-game-container">
-
         <div id="craps-registration-pane">
-      
           <div>Enter Username to begin</div>
-         
+
           <div>
             <input class="craps-registration-input" id="craps-username-input" />
           </div>
@@ -94,10 +92,15 @@
           <div>
             <button onclick="registerCrapsPlayer()">Continue</button>
           </div>
-          
         </div>
-        
-        <div id="craps-main-section">MAIN SECTION HERE</div>
+
+        <div id="craps-main-section">
+          <div class="craps-main-section-stats">
+            <div>Welcome, <span id="craps-stats-username"></span></div>
+            <div id="craps-stats-money-container">$<span id="craps-stats-money"></span></div>
+            <div>Round: <span id="craps-stats-rounds"></span></div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
