@@ -69,20 +69,20 @@
 
 .craps-main-section-stats {
   text-align: center;
-  font-size: calc(var(--height-scale)*0.04);
-  margin-top: calc(var(--height-scale)*0.15);
+  font-size: calc(var(--height-scale) * 0.04);
+  margin-top: calc(var(--height-scale) * 0.15);
 }
 
 #craps-stats-money-container {
-  font-size: calc(var(--height-scale)*0.085);
-  margin-top: calc(var(--height-scale)*0.04);
+  font-size: calc(var(--height-scale) * 0.085);
+  margin-top: calc(var(--height-scale) * 0.04);
 }
 
 .craps-round-manager {
   position: absolute;
   text-align: center;
   width: 100%;
-  bottom: calc(var(--height-scale)*0.04);
-  font-size: calc(var(--height-scale)*0.04);;
+  bottom: calc(var(--height-scale) * 0.04);
+  font-size: calc(var(--height-scale) * 0.04);
   border: blue solid 4px;
 }
