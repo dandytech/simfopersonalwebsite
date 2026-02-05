@@ -39,6 +39,7 @@
   background-image: url("../images/craspTable.png");
   background-size: cover;
   background-position: center top;
+  position: relative;
 }
 #craps-registration-pane {
   margin-top: 55px;
@@ -63,14 +64,25 @@
 
 #craps-main-section {
   display: none;
+  height: 100%;
 }
 
 .craps-main-section-stats {
   text-align: center;
-  margin-top: 70px;
+  font-size: calc(var(--height-scale)*0.04);
+  margin-top: calc(var(--height-scale)*0.15);
 }
 
 #craps-stats-money-container {
-  font-size: 30px;
-  margin: 25px 0 5px 0;
+  font-size: calc(var(--height-scale)*0.085);
+  margin-top: calc(var(--height-scale)*0.04);
+}
+
+.craps-round-manager {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: calc(var(--height-scale)*0.04);
+  font-size: calc(var(--height-scale)*0.04);;
+  border: blue solid 4px;
 }
