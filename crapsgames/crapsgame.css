@@ -1,23 +1,41 @@
+:root {
+  --width-scale: min(700px, 80vw, 80vh);
+  --height-scale: calc(var(--width-scale) * 0.714);
+  --game-title-size: min(calc(var(--height-scale) * 0.1), 2em);
+  --title-margin-bottom: calc(var(--height-scale) * 0.25);
+}
+
 #craps-game {
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../images/craps.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position: center top;
   color: white;
+  padding: 1px;
 }
 
 .craps-game-title {
+  font-size: var(--game-title-size);
   text-align: center;
-  padding-top: 100px;
+  margin-top: calc(
+    calc(
+        100vh-var(--game-title-size)-var(--title-margin-bottom)-var(
+            --height-scale
+          )
+      ) /
+      2
+  );
+  margin-bottom: var(--title-margin-bottom);
+  padding-top: 30px;
 }
 
 .craps-game-container {
-  width: min(700px, 80vw);
-  height: min(500px, 57vw);
+  width: var(--width-scale);
+  height: var(--height-scale);
+  /* width: min(700px, 800vw);
+  height: min(500px, 57vw); */
   border: solid white 2px;
-  margin: 100px auto 0 auto;
+  margin: 0 auto;
   background-image: url("../images/craspTable.png");
   background-size: cover;
   background-position: center top;
