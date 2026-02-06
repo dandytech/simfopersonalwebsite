@@ -95,6 +95,7 @@ function setBetAmount(betAmount) {
 }
 
 function rollDice() {
+  formatDiceScale();
   document.getElementById(crapsRollDiceButton).style.display = "none";
   const rollDiceElement = document.getElementById(
     crapsRollDiceAnimationContainer,
@@ -105,6 +106,16 @@ function rollDice() {
     callback: processDiceResult,
     delay: 10000000,
   });
+}
+
+function formatDiceScale() {
+  const vw = window.innerWidth * 0.8;
+  const vh = window.innerHeight * 0.8;
+  const widthScale = Math.min(700, vw, vh);
+  const heightScale = widthScale * 0.714;
+  const scale = heightScale / 494.6592;
+  document.getElementById(crapsRollDiceAnimationContainer).style.transform =
+    "scale(" + scale + ")";
 }
 
 function processDiceResult(diceResult) {
