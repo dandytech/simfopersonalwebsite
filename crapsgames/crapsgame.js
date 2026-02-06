@@ -18,6 +18,8 @@ const crapsStatsUsername = "craps-stats-username";
 const crapsStatsMoney = "craps-stats-money";
 const crapsStatsRounds = "craps-stats-rounds";
 const crapsUserBetAmount = "craps-user-bet-amount";
+const crapsRollDiceButton = "craps-roll-dice-button";
+const crapsRollDiceAnimationContainer = "craps-roll-dice-animation-container";
 
 //In-Game varibales
 let currentMoney = startingMoney;
@@ -90,4 +92,21 @@ function decreaseBet() {
 function setBetAmount(betAmount) {
   currentBetAmount = betAmount;
   document.getElementById(crapsUserBetAmount).innerHTML = "$" + betAmount;
+}
+
+function rollDice() {
+  document.getElementById(crapsRollDiceButton).style.display = "none";
+  const rollDiceElement = document.getElementById(
+    crapsRollDiceAnimationContainer,
+  );
+  rollADie({
+    element: rollDiceElement,
+    numberOfDice: 2,
+    callback: processDiceResult,
+    delay: 10000000,
+  });
+}
+
+function processDiceResult(diceResult) {
+  console.log(diceResult);
 }
