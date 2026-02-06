@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./aboutmesection/about.css" />
     <link rel="stylesheet" href="./crapsgames/crapsgame.css" />
+    <link rel="stylesheet" href="./crapsgames/utils.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Armata"
@@ -101,14 +102,33 @@
               $<span id="craps-stats-money"></span>
             </div>
             <div>Round: <span id="craps-stats-rounds"></span></div>
+            <div class="craps-on-table-container">
+              <div class="craps-roll-dice-container no-select">
+                Roll Dice <i class="fas fa-dice"></i>
+              </div>
+            </div>
           </div>
           <div class="craps-round-manager">
-            <div id="EVEN" onclick="betEven()">EVEN</div>
-            <div id="ODD" onclick="betOdd()">ODD</div>
-            <div>
-              <span onclick="decreaseBet()">-</span
-              ><span id="craps-user-bet-amount">$100</span
-              ><span onclick="increaseBet()">+</span>
+            <div class="craps-betting-grid no-select">
+              <div class="craps-bet-button" id="EVEN" onclick="betEven()">
+                EVEN
+              </div>
+
+              <div class="craps-bet-amount-container">
+                <span
+                  class="craps-user-bet-amount-change"
+                  onclick="decreaseBet()"
+                  >-</span
+                ><span id="craps-user-bet-amount">$100</span
+                ><span
+                  class="craps-user-bet-amount-change"
+                  onclick="increaseBet()"
+                  >+</span
+                >
+              </div>
+              <div class="craps-bet-button" id="ODD" onclick="betOdd()">
+                ODD
+              </div>
             </div>
           </div>
         </div>
