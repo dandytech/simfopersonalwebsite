@@ -15,26 +15,31 @@ h6,
 p {
   margin: 0;
 }
+
 .main-section {
   height: 100vh;
   width: 100vw;
+}
 
+.main-sectiondiv {
+  height: 100vh;
+  width: 100vw;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./images/bgimage.jpg");
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("./images/bgimage.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   flex-direction: column; /* stack items vertically */
   justify-content: center; /* vertical centering */
   align-items: center; /* horizontal centering */
-
   text-align: center;
 }
-
-.main-section h1 {
+.main-sectiondiv h1 {
   font-size: 34px;
   color: white;
 }
