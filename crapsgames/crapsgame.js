@@ -109,7 +109,7 @@ function rollDice() {
   rollADie({
     element: rollDiceElement,
     numberOfDice: 2,
-    callback: processDiceResult,
+    callback: delayedProcessDiceResult,
     delay: 10000000,
   });
 }
@@ -127,6 +127,11 @@ function formatDiceScale() {
     "scale(" + scale + ")";
 }
 
+function delayedProcessDiceResult(diceResult) {
+  setTimeout(function () {
+    processDiceResult(diceResult);
+  }, 1000);
+}
 function processDiceResult(diceResult) {
   const sum = diceResult.reduce((partialSum, a) => partialSum + a, 0);
   let diceSumResult = bets.even;
