@@ -108,7 +108,10 @@ function rollDice() {
   });
 }
 
+window.addEventListener("reSize", formatDiceScale);
+
 function formatDiceScale() {
+  console.log("reSized");
   const vw = window.innerWidth * 0.8;
   const vh = window.innerHeight * 0.8;
   const widthScale = Math.min(700, vw, vh);
