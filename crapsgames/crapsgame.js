@@ -23,6 +23,8 @@ const crapsRollDiceAnimationContainer = "craps-roll-dice-animation-container";
 const crapsBettingGridContainer = "craps-betting-grid-container";
 const crapsRoundFinishGridContainer = "craps-round-finish-grid-container";
 const crpasRoundFinishMessage = "crpas-round-finish-message";
+const crapsNextRoundButton = "craps-next-round-button";
+const crapsNextRoundButtonDisabled = "craps-next-round-button-disabled";
 
 //In-Game varibales
 let currentMoney = startingMoney;
@@ -63,7 +65,9 @@ function hideMainGameSection() {
 }
 
 function setUpFirstRound() {
+  document.getElementById(crapsNextRoundButtonDisabled).style.display = "none";
   document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
+  document.getElementById(crapsNextRoundButton).style.display = "block";
   setMoney(startingMoney);
   setRound(startingRounds);
   betEven();
@@ -174,6 +178,9 @@ function processDiceResult(diceResult) {
 
   if (currentMoney === 0) {
     roundFinishMessage = "YOU'RE OUT";
+    document.getElementById(crapsNextRoundButtonDisabled).style.display =
+      "block";
+    document.getElementById(crapsNextRoundButton).style.display = "none";
   }
 
   document.getElementById(crapsBettingGridContainer).style.display = "none";

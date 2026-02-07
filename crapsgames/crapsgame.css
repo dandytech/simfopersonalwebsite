@@ -158,5 +158,13 @@
   padding: calc(var(--height-scale) * 0.03);
   border-right: solid white 2px;
   border-left: solid white 2px;
-  background-color: rgba(0, 0, 0, 5);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#craps-next-round-button-disabled {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: gray;
+}
+#craps-next-round-button-disabled:hover {
+  cursor: not-allowed;
 }
