@@ -107,32 +107,46 @@
             </div>
             <div>Round: <span id="craps-stats-rounds"></span></div>
             <div class="craps-on-table-container">
-              <div id="craps-roll-dice-button" class="craps-roll-dice-container no-select" onclick="rollDice()">
+              <div
+                id="craps-roll-dice-button"
+                class="craps-roll-dice-container no-select"
+                onclick="rollDice()"
+              >
                 Roll Dice <i class="fas fa-dice"></i>
               </div>
               <div id="craps-roll-dice-animation-container"></div>
             </div>
           </div>
           <div class="craps-round-manager">
-            <div class="craps-betting-grid no-select">
-              <div class="craps-bet-button" id="EVEN" onclick="betEven()">
-                EVEN
-              </div>
+            <div id="craps-betting-grid-container">
+              <div class="craps-betting-grid no-select">
+                <div class="craps-bet-button" id="EVEN" onclick="betEven()">
+                  EVEN
+                </div>
 
-              <div class="craps-bet-amount-container">
-                <span
-                  class="craps-user-bet-amount-change"
-                  onclick="decreaseBet()"
-                  >-</span
-                ><span id="craps-user-bet-amount">$100</span
-                ><span
-                  class="craps-user-bet-amount-change"
-                  onclick="increaseBet()"
-                  >+</span
-                >
+                <div class="craps-bet-amount-container">
+                  <span
+                    class="craps-user-bet-amount-change"
+                    onclick="decreaseBet()"
+                    >-</span
+                  ><span id="craps-user-bet-amount">$100</span
+                  ><span
+                    class="craps-user-bet-amount-change"
+                    onclick="increaseBet()"
+                    >+</span
+                  >
+                </div>
+                <div class="craps-bet-button" id="ODD" onclick="betOdd()">
+                  ODD
+                </div>
               </div>
-              <div class="craps-bet-button" id="ODD" onclick="betOdd()">
-                ODD
+            </div>
+            <div id="craps-round-finish-grid-container">
+              <div class="craps-round-finish-grid no-select">
+                <div class="craps-round-finish-button">YOU WIN</div>
+
+                <div id="crpas-round-finish-message">NEXT</div>
+                <div class="craps-round-finish-button">EXIT GAME</div>
               </div>
             </div>
           </div>
