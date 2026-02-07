@@ -63,15 +63,21 @@ function hideMainGameSection() {
 }
 
 function setUpFirstRound() {
+  document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
+  setMoney(startingMoney);
+  setRound(startingRounds);
+  betEven();
+  setBetAmount(minimumBet);
+  setUpNextRound();
+}
+
+function setUpNextRound() {
   document.getElementById(crapsRollDiceAnimationContainer).style.display =
     "none";
   document.getElementById(crapsRoundFinishGridContainer).style.display = "none";
   document.getElementById(crapsRollDiceButton).style.display = "block";
   document.getElementById(crapsBettingGridContainer).style.display = "block";
-  document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
   canChangeBet = true;
-  setMoney(startingMoney);
-  setRound(startingRounds);
   betEven();
   setBetAmount(minimumBet);
 }
@@ -178,7 +184,13 @@ function processDiceResult(diceResult) {
 }
 
 function exitGame() {
-  alert("After playing "+currentRounds+ " rounds, you leave with "+currentMoney+ "$")
+  alert(
+    "After playing " +
+      currentRounds +
+      " rounds, you leave with " +
+      currentMoney +
+      "$",
+  );
   hideMainGameSection();
   showRegistrationPane();
   document.getElementById(crapsUsernameInput).value = "";
