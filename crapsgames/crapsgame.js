@@ -26,6 +26,7 @@ let currentMoney = startingMoney;
 let currentRounds = startingRounds;
 let currentBet = bets.even;
 let currentBetAmount = minimumBet;
+let canChangeBet = true;
 
 function registerCrapsPlayer() {
   crapsUsername = document.getElementById(crapsUsernameInput).value;
@@ -53,19 +54,19 @@ function showMainGameSection() {
 
 function setUpFirstRound() {
   document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
-  currentMoney = startingMoney;
-  currentRounds = startingRounds;
-  setMoney(currentMoney);
-  setRound(currentRounds);
+  setMoney(startingMoney);
+  setRound(startingRounds);
   betEven();
   setBetAmount(minimumBet);
 }
 
 function setMoney(money) {
+  currentMoney = money;
   document.getElementById(crapsStatsMoney).innerHTML = money;
 }
 
 function setRound(round) {
+  currentRounds = round;
   document.getElementById(crapsStatsRounds).innerHTML = round;
 }
 
@@ -76,10 +77,12 @@ function betOdd() {
   choseBet(bets.odd);
 }
 function choseBet(bet) {
-  currentBet = bet;
-  document.getElementById(bet).style.backgroundColor = "red";
-  const deselectBet = bet == bets.even ? bets.odd : bets.even;
-  document.getElementById(deselectBet).style.backgroundColor = "transparent";
+  if (canChangeBet) {
+    currentBet = bet;
+    document.getElementById(bet).style.backgroundColor = "red";
+    const deselectBet = bet == bets.even ? bets.odd : bets.even;
+    document.getElementById(deselectBet).style.backgroundColor = "transparent";
+  }
 }
 
 function increaseBet() {
@@ -90,11 +93,14 @@ function decreaseBet() {
 }
 
 function setBetAmount(betAmount) {
-  currentBetAmount = betAmount;
-  document.getElementById(crapsUserBetAmount).innerHTML = "$" + betAmount;
+  if (canChangeBet) {
+    currentBetAmount = betAmount;
+    document.getElementById(crapsUserBetAmount).innerHTML = "$" + betAmount;
+  }
 }
 
 function rollDice() {
+  canChangeBet = false;
   formatDiceScale();
   document.getElementById(crapsRollDiceButton).style.display = "none";
   const rollDiceElement = document.getElementById(
@@ -122,5 +128,17 @@ function formatDiceScale() {
 }
 
 function processDiceResult(diceResult) {
-  console.log(diceResult);
+  const sum = diceResult.reduce((partialSum, a) => partialSum + a, 0);
+  let diceSumResult = bets.even;
+  if (sum % 2 === 1) {
+    diceSumResult = bets.odd;
+  }
+  setRound(currentRounds + 1);
+  if (diceSumResult === currentBet) {
+    // alert("YOU WIN");
+    setMoney(currentMoney + currentBetAmount);
+  } else {
+    //alert("YOU LOSE");
+    setMoney(currentMoney - currentBetAmount);
+  }
 }
