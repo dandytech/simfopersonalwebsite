@@ -1,3 +1,7 @@
+const quoteTextElement = "random-quote-text";
+const quoteAuthorElement = "random-quote-author";
+const randomQuoteGeneratorElement = "random-quote-generator";
+
 const colors = [
   ["#0c7dee", "#db9d9d"],
   ["#e6e677", "#773a51"],
@@ -31,17 +35,16 @@ async function getNewRandomQuote() {
     const quoteText = data.content;
     const quoteAuthor = data.author;
 
-    document.getElementById("random-quote-text").innerHTML = `"${quoteText}"`;
-    document.getElementById("random-quote-author").innerHTML = quoteAuthor;
+    document.getElementById(quoteTextElement).innerHTML = `"${quoteText}"`;
+    document.getElementById(quoteAuthorElement).innerHTML = quoteAuthor;
 
     const colorCombo = getRandomColorCombo();
-
-    document.getElementById("random-quote-generator").style.background =
+    document.getElementById(randomQuoteGeneratorElement).style.background =
       `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`;
   } catch (error) {
     console.error(error);
-    document.getElementById("random-quote-text").innerHTML =
+    document.getElementById(quoteTextElement).innerHTML =
       "Unable to fetch quote 😔";
-    document.getElementById("random-quote-author").innerHTML = "";
+    document.getElementById(quoteAuthorElement).innerHTML = "";
   }
 }
