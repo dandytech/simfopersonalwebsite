@@ -18,7 +18,9 @@ function getRandomColorCombo() {
 
 async function getNewRandomQuote() {
   try {
-    const response = await fetch("https://api.quotable.io/quotes/random");
+    const response = await fetch("https://api.quotable.io/random", {
+      mode: "cors",
+    });
 
     if (!response.ok) {
       throw new Error("There was a problem getting a new quote");
@@ -26,8 +28,8 @@ async function getNewRandomQuote() {
 
     const data = await response.json();
 
-    const quoteText = data[0].content;
-    const quoteAuthor = data[0].author;
+    const quoteText = data.content;
+    const quoteAuthor = data.author;
 
     document.getElementById("random-quote-text").innerHTML = `"${quoteText}"`;
     document.getElementById("random-quote-author").innerHTML = quoteAuthor;
@@ -38,6 +40,8 @@ async function getNewRandomQuote() {
       `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`;
   } catch (error) {
     console.error(error);
-    alert(error.message);
+    document.getElementById("random-quote-text").innerHTML =
+      "Unable to fetch quote 😔";
+    document.getElementById("random-quote-author").innerHTML = "";
   }
 }
