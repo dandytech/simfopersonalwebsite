@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="./crapsgames/utils.css" />
     <link
       rel="stylesheet"
+      href="./randomQuoteGenerator/rnadomQuoteGenerator.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Armata"
     />
 
@@ -30,6 +34,7 @@
     ></script>
   </head>
   <body onload="getNewRandomQuote()">
+    <!-- MAIN SECTION -->
     <div class="main-section">
       <div class="main-sectiondiv">
         <h1>DANIEL AMAECHI</h1>
@@ -39,6 +44,8 @@
         </button>
       </div>
     </div>
+
+    <!-- ABOUT ME SECTION -->
     <div class="about">
       <h1>About Me</h1>
       <p>
@@ -80,11 +87,12 @@
           <i class="fas fa-at"></i>
         </a>
       </p>
-
       <p>
         <a href="./images/cv.pdf" download> Download My CV </a>
       </p>
     </div>
+
+    <!-- CRAPS CASINO GAME SECTION -->
     <div class="main-section" id="craps-game">
       <h1 class="craps-game-title">Crasp Casino Game</h1>
       <div class="craps-game-container">
@@ -169,17 +177,16 @@
       </div>
     </div>
 
-    <div class="main-section" id="random-quote-generator">
-      <div class="main-sectiondiv">
-        <div>
-          Quote:
-          <div id="random-quote-text"></div>
-        </div>
-        <div>
-          Author:
-          <div id="random-quote-author"></div>
-        </div>
-        <div onclick="getNewRandomQuote()"><button>New Quote</button></div>
+    <!-- QUOTE GENERATOR SECTION -->
+    <div class="main-section-quote" id="random-quote-generator">
+      <div>
+        <div id="random-quote-title">RANDOM QUOTE GENERATOR</div>
+
+        <div id="random-quote-text"></div>
+
+        <div id="random-quote-author"></div>
+
+        <button onclick="getNewRandomQuote()">New Quote</button>
       </div>
     </div>
   </body>
