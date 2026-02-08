@@ -23,12 +23,13 @@
       }
     </script>
     <script src="./crapsgames/crapsgame.js"></script>
+    <script src="./randomQuoteGenerator/randQuoteGenerator.js"></script>
     <script
       type="text/javascript"
       src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
     ></script>
   </head>
-  <body>
+  <body onload="getNewRandomQuote()">
     <div class="main-section">
       <div class="main-sectiondiv">
         <h1>DANIEL AMAECHI</h1>
@@ -165,6 +166,20 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="main-section" id="random-quote-generator">
+      <div class="main-sectiondiv">
+        <div>
+          Quote:
+          <div id="random-quote-text"></div>
+        </div>
+        <div>
+          Author:
+          <div id="random-quote-author"></div>
+        </div>
+        <div onclick="getNewRandomQuote()"><button>New Quote</button></div>
       </div>
     </div>
   </body>
