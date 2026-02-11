@@ -31,7 +31,7 @@ async function getNewRandomQuote() {
     }
 
     const data = await response.json();
-
+    console.log(data);
     const quoteText = data.content;
     const quoteAuthor = data.author;
 
@@ -48,3 +48,35 @@ async function getNewRandomQuote() {
     document.getElementById(quoteAuthorElement).innerHTML = "";
   }
 }
+
+// async function getNewRandomQuote() {
+//   if (!navigator.onLine) {
+//     quoteTextElement.innerHTML = "Check your network 🌐";
+//     quoteAuthorElelemt.innerHTML = "";
+//     return;
+//   }
+
+//   try {
+//     const response = await fetch("https://zenquotes.io/api/random");
+
+//     if (!response.ok) {
+//       throw new Error("Failed to fetch quote");
+//     }
+
+//     const data = await response.json();
+
+//     // ZenQuotes returns an array
+//     const quoteText = data[0].q;
+//     const quoteAuthor = data[0].a;
+
+//     quoteTextElement.innerHTML = `"${quoteText}"`;
+//     quoteAuthorElelemt.innerHTML = quoteAuthor;
+
+//     const colorCombo = getRandomColorCombo();
+//     randomQuoteGeneratorElement.style.background = `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`;
+//   } catch (error) {
+//     console.error(error);
+//     quoteTextElement.innerHTML = "Quotes unavailable 😔";
+//     quoteAuthorElelemt.innerHTML = "";
+//   }
+// }
