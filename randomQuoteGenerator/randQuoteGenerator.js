@@ -31,7 +31,6 @@ async function getNewRandomQuote() {
     }
 
     const data = await response.json();
-    console.log(data);
     const quoteText = data.content;
     const quoteAuthor = data.author;
 

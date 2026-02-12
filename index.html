@@ -28,6 +28,7 @@
     </script>
     <script src="./crapsgames/crapsgame.js"></script>
     <script src="./randomQuoteGenerator/randQuoteGenerator.js"></script>
+     <script src="./stockAnalysisDashboard/stockAnalysisDashboard.js"></script>
     <script
       type="text/javascript"
       src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
@@ -188,6 +189,21 @@
 
         <button onclick="getNewRandomQuote()">New Quote</button>
       </div>
+    </div>
+
+    <!-- STOCK ANALYSIS DASHBOARD SECTION -->
+    <div class="" id="stock-analysis-dashboard">
+      <div>
+        <div id="stock-analysis-dashboard-title">STOCK ANALYSIS DASHBOARD</div>
+
+        <div id="stock-analysis-dashboard-subtitle">Put in a stock symbol you want to analyze (e.g. MSFT)</div>
+
+        <input id="stock-analysis-dashboard-input">
+
+        <div id="stock-analysis-dashboard-data"></div>
+
+        <button onclick="analyzeStock()">Analyze</button>
+      </input>
     </div>
   </body>
 </html>
