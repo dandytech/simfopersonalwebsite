@@ -1,11 +1,5 @@
-const stockAnalysisDashboardInput = "stock-analysis-dashboard-input";
 
-async function analyzeStock() {
-  document.getElementById("stock-analysis-dashboard-data").innerHTML = "";
-  const stockSymbolToAnalyze = document.getElementById(
-    stockAnalysisDashboardInput,
-  ).value;
-
+export async function analyzeStock(stockSymbolToAnalyze: string) {
   if (stockSymbolToAnalyze.length === 0) {
     alert("You must put in a ticket symbol before running the analysis");
     return;
@@ -18,6 +12,5 @@ async function analyzeStock() {
     alert("Something went wrong, there was a problem getting your stock");
   }
   const data = await response.json();
-  document.getElementById("stock-analysis-dashboard-data").innerHTML = JSON.stringify(data);
-  console.log(data);
+  return data;
 }
