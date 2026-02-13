@@ -22,60 +22,28 @@ function getRandomColorCombo() {
 
 async function getNewRandomQuote() {
   try {
-    const response = await fetch("https://api.quotable.io/random", {
-      mode: "cors",
-    });
+    const response = await fetch("https://dummyjson.com/quotes/random");
 
     if (!response.ok) {
-      throw new Error("There was a problem getting a new quote");
+      throw new Error("Failed to fetch quote");
     }
 
     const data = await response.json();
-    const quoteText = data.content;
-    const quoteAuthor = data.author;
 
-    document.getElementById(quoteTextElement).innerHTML = `"${quoteText}"`;
+    const quoteAuthor = data.author;
+    const quoteText = data.quote;
+
+    document.getElementById(quoteTextElement).innerHTML = quoteText;
     document.getElementById(quoteAuthorElement).innerHTML = quoteAuthor;
 
     const colorCombo = getRandomColorCombo();
+
     document.getElementById(randomQuoteGeneratorElement).style.background =
       `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`;
   } catch (error) {
     console.error(error);
     document.getElementById(quoteTextElement).innerHTML =
-      "Unable to fetch quote 😔";
+      "Quotes unavailable 😔";
     document.getElementById(quoteAuthorElement).innerHTML = "";
   }
 }
-
-// async function getNewRandomQuote() {
-//   if (!navigator.onLine) {
-//     quoteTextElement.innerHTML = "Check your network 🌐";
-//     quoteAuthorElelemt.innerHTML = "";
-//     return;
-//   }
-
-//   try {
-//     const response = await fetch("https://zenquotes.io/api/random");
-
-//     if (!response.ok) {
-//       throw new Error("Failed to fetch quote");
-//     }
-
-//     const data = await response.json();
-
-//     // ZenQuotes returns an array
-//     const quoteText = data[0].q;
-//     const quoteAuthor = data[0].a;
-
-//     quoteTextElement.innerHTML = `"${quoteText}"`;
-//     quoteAuthorElelemt.innerHTML = quoteAuthor;
-
-//     const colorCombo = getRandomColorCombo();
-//     randomQuoteGeneratorElement.style.background = `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`;
-//   } catch (error) {
-//     console.error(error);
-//     quoteTextElement.innerHTML = "Quotes unavailable 😔";
-//     quoteAuthorElelemt.innerHTML = "";
-//   }
-// }
