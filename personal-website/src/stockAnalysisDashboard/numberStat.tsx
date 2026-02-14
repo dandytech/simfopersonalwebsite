@@ -14,7 +14,7 @@ const NumberDisplay = styled.div`
 const ValueDisplay = styled.div`
   font-weight: bold;
 
-  font-size: 12px;
+  font-size: 14px;
 `;
 function NumberStat({
   value,

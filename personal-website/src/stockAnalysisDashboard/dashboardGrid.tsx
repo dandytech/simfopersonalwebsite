@@ -5,6 +5,7 @@ import { DashboardGridContent } from "./stockAnalysisDashboard";
 import NumberStat from "./numberStat";
 import LineChartContent from "./lineChartContent";
 import NewsList from "./newsLinks";
+import NewsSentimentAnalysis from "./newsSentimentAnalysis";
 
 function DashboardGrid({ stockData }: { stockData: any }) {
   useEffect(() => {
@@ -13,7 +14,6 @@ function DashboardGrid({ stockData }: { stockData: any }) {
 
   return (
     <div>
-      {/* {JSON.stringify(stockData)} */}
       <div className="grid-stack">
         {/* First row */}
         <div className="grid-stack-item" gs-w="3">
@@ -63,7 +63,15 @@ function DashboardGrid({ stockData }: { stockData: any }) {
         </div>
         <div className="grid-stack-item" gs-w="2" gs-h="2">
           <DashboardGridContent className="grid-stack-item-content">
-            <div style={{ marginBottom: "10px" }}>Feature Earnings</div>
+            <div
+              style={{
+                marginBottom: "10px",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              Feature Earnings
+            </div>
             {stockData.futureEarningDates.map((nextDate: string) => (
               <div>{nextDate}</div>
             ))}
@@ -71,9 +79,16 @@ function DashboardGrid({ stockData }: { stockData: any }) {
         </div>
 
         {/* Third Row */}
-        <div className="grid-stack-item" gs-w="5" gs-h="3">
+        <div className="grid-stack-item" gs-w="5" gs-h="2">
           <DashboardGridContent className="grid-stack-item-content">
             <NewsList newsLinks={stockData.newsArticles}></NewsList>
+          </DashboardGridContent>
+        </div>
+        <div className="grid-stack-item" gs-w="4" gs-h="2">
+          <DashboardGridContent className="grid-stack-item-content">
+            <NewsSentimentAnalysis
+              newsTextAnalysis={stockData.newsTextAnalysis}
+            />
           </DashboardGridContent>
         </div>
       </div>

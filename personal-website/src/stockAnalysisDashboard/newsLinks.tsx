@@ -10,8 +10,6 @@ interface NewsLinksListProps {
   newsLinks: NewsLink[];
 }
 
-/* ================= Styled Components ================= */
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
