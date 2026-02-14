@@ -1,3 +1,4 @@
+import styled from "styled-components";
 
 export async function analyzeStock(stockSymbolToAnalyze: string) {
   if (stockSymbolToAnalyze.length === 0) {
@@ -14,3 +15,17 @@ export async function analyzeStock(stockSymbolToAnalyze: string) {
   const data = await response.json();
   return data;
 }
+
+export const VerticalAlignContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-content:center
+  
+`;
+
+export const VerticalAlignContent = styled.div`
+  display: table;
+  vertical-align: middle;
+`;
