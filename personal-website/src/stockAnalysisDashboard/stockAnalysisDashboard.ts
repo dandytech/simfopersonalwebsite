@@ -55,11 +55,11 @@ export const FlexRow = styled.div`
 export const ChartContainer = styled.div`
   flex: 0 0 150px; /* fixed width for chart */
   height: 100%;
-  width: 55%;
+  width: 50%;
 `;
 
 export const TitleContainer = styled.div`
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
