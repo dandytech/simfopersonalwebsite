@@ -1,3 +1,4 @@
+// randQuoteGenerator.js
 const quoteTextElement = "random-quote-text";
 const quoteAuthorElement = "random-quote-author";
 const randomQuoteGeneratorElement = "random-quote-generator";
@@ -20,7 +21,7 @@ function getRandomColorCombo() {
   return colors[randomIndex];
 }
 
-async function getNewRandomQuote() {
+export async function getNewRandomQuote() {
   try {
     const response = await fetch("https://dummyjson.com/quotes/random");
 
@@ -29,7 +30,6 @@ async function getNewRandomQuote() {
     }
 
     const data = await response.json();
-
     const quoteAuthor = data.author;
     const quoteText = data.quote;
 
@@ -37,7 +37,6 @@ async function getNewRandomQuote() {
     document.getElementById(quoteAuthorElement).innerHTML = quoteAuthor;
 
     const colorCombo = getRandomColorCombo();
-
     document.getElementById(randomQuoteGeneratorElement).style.background =
       `linear-gradient(45deg, ${colorCombo[0]}, ${colorCombo[1]})`;
   } catch (error) {

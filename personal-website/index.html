@@ -23,6 +23,7 @@
     />
   </head>
   <body onload="getNewRandomQuote()">
+   
     <!-- MAIN SECTION -->
     <div class="main-section">
       <div class="main-sectiondiv">
@@ -167,7 +168,7 @@
     </div>
 
     <!-- RANDOM QUOTE GENERATOR SECTION -->
-    <div class="main-section-quote" id="random-quote-generator">
+    <!-- <div class="main-section-quote" id="random-quote-generator">
       <div>
         <div id="random-quote-title">RANDOM QUOTE GENERATOR</div>
 
@@ -176,6 +177,15 @@
         <div id="random-quote-author"></div>
 
         <button onclick="getNewRandomQuote()">New Quote</button>
+      </div>
+    </div> -->
+    <!-- RANDOM QUOTE GENERATOR SECTION -->
+    <div class="main-section-quote" id="random-quote-generator">
+      <div>
+        <div id="random-quote-title">RANDOM QUOTE GENERATOR</div>
+        <div id="random-quote-text"></div>
+        <div id="random-quote-author"></div>
+        <button id="new-quote-btn">New Quote</button>
       </div>
     </div>
 
@@ -197,6 +207,25 @@
       function makeDreamComeTrue() {
         alert("Welcome! Combine Development with Quality Assurance Testing 🚀");
       }
+    </script>
+    
+    <script type="module">
+      import { getNewRandomQuote } from './src/randomQuoteGenerator/randQuoteGenerator.js';
+
+      // Make it global for inline HTML if needed
+      window.getNewRandomQuote = getNewRandomQuote;
+
+      // Run on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        getNewRandomQuote();
+
+        // Attach new quote button
+        document.getElementById('new-quote-btn').addEventListener('click', () => {
+          getNewRandomQuote();
+        });
+      });
+
+     
     </script>
 
 <!-- <div id="root"></div>
