@@ -20,12 +20,24 @@ export const VerticalAlignContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content:center;
-  align-content:center
-  
+  justify-content: center;
+  align-content: center;
 `;
 
 export const VerticalAlignContent = styled.div`
   display: table;
   vertical-align: middle;
+  width: 100%;
+`;
+
+export const DashboardGridContainer = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  border: solid red 1px;
+`;
+
+export const DashboardGridContent = styled.div`
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
 `;

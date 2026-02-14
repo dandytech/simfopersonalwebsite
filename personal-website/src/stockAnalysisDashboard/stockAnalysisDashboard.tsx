@@ -3,6 +3,7 @@ import {
   analyzeStock,
   VerticalAlignContainer,
   VerticalAlignContent,
+  DashboardGridContainer,
 } from "./stockAnalysisDashboard";
 import SpinnerMini from "../spinnerMini";
 import "./stockAnalysisDashboard.css";
@@ -35,10 +36,12 @@ function StockAnalysisDashboard() {
       <div>
         <VerticalAlignContainer>
           <VerticalAlignContent>
-            <button onClick={() => goBack()}>Back</button>
-            <div>
-              <DashboardGrid stockData={stockData}></DashboardGrid>
-            </div>
+            <DashboardGridContainer>
+              <button onClick={() => goBack()}>Back</button>
+              <div>
+                <DashboardGrid stockData={stockData}></DashboardGrid>
+              </div>
+            </DashboardGridContainer>
           </VerticalAlignContent>
         </VerticalAlignContainer>
       </div>
