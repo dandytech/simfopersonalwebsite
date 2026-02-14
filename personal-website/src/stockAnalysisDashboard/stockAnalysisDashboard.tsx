@@ -6,6 +6,7 @@ import {
 } from "./stockAnalysisDashboard";
 import SpinnerMini from "../spinnerMini";
 import "./stockAnalysisDashboard.css";
+import DashboardGrid from "./dashboardGrid";
 
 function StockAnalysisDashboard() {
   const [stockData, setStockData] = useState();
@@ -35,7 +36,9 @@ function StockAnalysisDashboard() {
         <VerticalAlignContainer>
           <VerticalAlignContent>
             <button onClick={() => goBack()}>Back</button>
-            <div>{JSON.stringify(stockData)}</div>
+            <div>
+              <DashboardGrid stockData={stockData}></DashboardGrid>
+            </div>
           </VerticalAlignContent>
         </VerticalAlignContainer>
       </div>
