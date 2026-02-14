@@ -4,6 +4,9 @@ import {
   VerticalAlignContainer,
   VerticalAlignContent,
   DashboardGridContainer,
+  AnalysisContainer,
+  AnalysisTitle,
+  AnalysisText,
 } from "./stockAnalysisDashboard";
 import SpinnerMini from "../spinnerMini";
 import "./stockAnalysisDashboard.css";
@@ -51,9 +54,9 @@ function StockAnalysisDashboard() {
   return (
     <VerticalAlignContainer>
       <VerticalAlignContent>
-        <div>
+        <AnalysisContainer>
           <div id="stock-analysis-dashboard-title">
-            STOCK ANALYSIS DASHBOARD
+            <AnalysisTitle>STOCK ANALYSIS DASHBOARD</AnalysisTitle>
           </div>
 
           {isLoading ? (
@@ -63,7 +66,9 @@ function StockAnalysisDashboard() {
           ) : (
             <div>
               <div id="stock-analysis-dashboard-subtitle">
-                Put in a stock symbol you want to analyze (e.g. MSFT)
+                <AnalysisText>
+                  Put in a stock symbol you'd want to analyze (e.g. MSFT)
+                </AnalysisText>
               </div>
 
               <input
@@ -74,7 +79,7 @@ function StockAnalysisDashboard() {
               <button onClick={() => runStockAnalysis()}>Analyze</button>
             </div>
           )}
-        </div>
+        </AnalysisContainer>
       </VerticalAlignContent>
     </VerticalAlignContainer>
   );

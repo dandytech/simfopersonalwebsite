@@ -65,3 +65,59 @@ export const TitleContainer = styled.div`
   gap: 1rem;
   overflow: hidden;
 `;
+
+// --- Container ---
+export const AnalysisContainer = styled.div`
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+
+  /* Style all inputs inside */
+  input {
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #f9fbfe;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #10b981;
+    }
+
+    &::placeholder {
+      color: #d0137e;
+    }
+  }
+`;
+
+// --- Title ---
+export const AnalysisTitle = styled.div`
+  font-size: 40px;
+  font-weight: bolder;
+  /* color: #f77e05; */
+  color: #fdfcfb;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+`;
+
+// --- Text ---
+export const AnalysisText = styled.div`
+  font-size: 20px;
+  color: #fbf7f7; /* light gray text */
+  font-weight: 500;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  text-align: center;
+  line-height: 1;
+  font-weight: bold;
+`;
