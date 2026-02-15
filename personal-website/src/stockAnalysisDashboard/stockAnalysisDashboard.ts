@@ -5,7 +5,17 @@ export async function analyzeStock(stockSymbolToAnalyze: string) {
     alert("You must put in a ticket symbol before running the analysis");
     return;
   }
-  const url = `http://127.0.0.1:5000/analyze-stock/${stockSymbolToAnalyze}`;
+  //Local host
+  // const url = `http://127.0.0.1:5000/analyze-stock/${stockSymbolToAnalyze}`;
+
+  //Subnet
+  //const url = `http://10.157.178.163:5000/analyze-stock/${stockSymbolToAnalyze}`;
+
+  //ngrok (Internet)
+  // const url = `https://matrimonially-dodecahedral-keva.ngrok-free.dev/analyze-stock/${stockSymbolToAnalyze}`;
+
+  //Production (render.com)
+  const url = `https://text-analysis-tools.onrender.com/analyze-stock/${stockSymbolToAnalyze}`;
 
   console.log("Running");
   const response = await fetch(url);
