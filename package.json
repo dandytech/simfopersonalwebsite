@@ -1,22 +1,11 @@
 {
-  "name": "mywebsite",
-  "version": "1.0.0",
-  "description": "Personal website",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dandytech/simfopersonalwebsite.git"
-  },
-  "author": "Dandytech",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dandytech/simfopersonalwebsite/issues"
-  },
-  "homepage": "https://github.com/dandytech/simfopersonalwebsite#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "gridstack": "^12.4.2",
+    "react-icons": "^5.5.0",
+    "react-loader-spinner": "^8.0.2",
+    "styled-components": "^6.3.9"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.36"
   }
 }

@@ -1,0 +1,193 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DANIEL AMAECHI</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Armata"
+    />
+    <script type="module" crossorigin src="./assets/index-DsSvoRt8.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BwvFrbTO.css">
+  </head>
+  <body onload="getNewRandomQuote()">
+   
+    <!-- MAIN SECTION -->
+    <div class="main-section">
+      <div class="main-sectiondiv">
+        <h1>DANIEL AMAECHI</h1>
+        <p>Developing & Ensuring Quality of Software Products</p>
+        <button onclick="makeDreamComeTrue()">
+          COMBINE DEVELOPMENT WITH TESTING
+        </button>
+      </div>
+    </div>
+
+    <!-- ABOUT ME SECTION -->
+    <div class="about">
+      <h1>About Me</h1>
+      <p>
+        Detail-oriented Software Quality Assurance (QA) Tester & Full Stack
+        Software Developer with over 8 years of experience in designing,
+        developing, and testing high-quality applications. Skilled in Node.js,
+        MySQL, MongoDB, and modern JavaScript frameworks. Experienced in various
+        testing methodologies, including Functional, Automation, Performance,
+        API, and Security Testing. Proven ability to understand client
+        requirements, develop test cases, and collaborate effectively with
+        cross-functional teams to ensure reliable software delivery. Proficient
+        in utilizing modern automation tools and frameworks, including Selenium,
+        Playwright, Appium, Postman, and Apache JMeter, to enhance testing
+        efficiency and maintain high code quality.
+      </p>
+      <p class="socials">
+        <a
+          href="https://www.facebook.com/danielamaechi.nwankwo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a
+          href="https://wa.me/12347065123746"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="https://x.com/ADamaechi"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="mailto:dannkwo@gmail.com">
+          <i class="fas fa-at"></i>
+        </a>
+      </p>
+      <p>
+        <a href="./src/images/cv.pdf" download> Download My CV </a>
+      </p>
+    </div>
+
+    <!-- CRAPS CASINO GAME SECTION -->
+    <div class="main-section" id="craps-game">
+      <h1 class="craps-game-title">Crasp Casino Game</h1>
+      <div class="craps-game-container">
+        <div id="craps-registration-pane">
+          <div>Enter Username to begin</div>
+
+          <div>
+            <input class="craps-registration-input" id="craps-username-input" />
+          </div>
+
+          <div>
+            <button onclick="registerCrapsPlayer()">Continue</button>
+          </div>
+        </div>
+
+        <div id="craps-main-section">
+          <div class="craps-main-section-stats">
+            <div>Welcome, <span id="craps-stats-username"></span></div>
+            <div id="craps-stats-money-container">
+              $<span id="craps-stats-money"></span>
+            </div>
+            <div>Round: <span id="craps-stats-rounds"></span></div>
+            <div class="craps-on-table-container">
+              <div
+                id="craps-roll-dice-button"
+                class="craps-roll-dice-container no-select"
+                onclick="rollDice()"
+              >
+                Roll Dice <i class="fas fa-dice"></i>
+              </div>
+              <div id="craps-roll-dice-animation-container"></div>
+            </div>
+          </div>
+          <div class="craps-round-manager">
+            <div id="craps-betting-grid-container">
+              <div class="craps-betting-grid no-select">
+                <div class="craps-bet-button" id="EVEN" onclick="betEven()">
+                  EVEN
+                </div>
+
+                <div class="craps-bet-amount-container">
+                  <span
+                    class="craps-user-bet-amount-change"
+                    onclick="decreaseBet()"
+                    >-</span
+                  ><span id="craps-user-bet-amount">$100</span
+                  ><span
+                    class="craps-user-bet-amount-change"
+                    onclick="increaseBet()"
+                    >+</span
+                  >
+                </div>
+                <div class="craps-bet-button" id="ODD" onclick="betOdd()">
+                  ODD
+                </div>
+              </div>
+            </div>
+            <div id="craps-round-finish-grid-container">
+              <div class="craps-round-finish-grid no-select">
+                <div
+                  id="craps-next-round-button"
+                  class="craps-round-finish-button"
+                  onclick="setUpNextRound()"
+                >
+                  NEXT ROUND
+                </div>
+                <div
+                  id="craps-next-round-button-disabled"
+                  class="craps-round-finish-button"
+                >
+                  NEXT ROUND
+                </div>
+
+                <div id="crpas-round-finish-message"></div>
+                <div class="craps-round-finish-button" onclick="exitGame()">
+                  EXIT GAME
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RANDOM QUOTE GENERATOR SECTION -->
+    <div class="main-section-quote" id="random-quote-generator">
+      <div>
+        <div id="random-quote-title">RANDOM QUOTE GENERATOR</div>
+        <div id="random-quote-text"></div>
+        <div id="random-quote-author"></div>
+        <button id="new-quote-btn">New Quote</button>
+      </div>
+    </div>
+
+    <!-- STOCK ANALYSIS DASHBOARD SECTION -->
+    <div class="main-section" id="stock-analysis-dashboard">
+      <div id="root"></div>
+ 
+  </body>
+</html>
+
+   <script src="./src/crapsgames/crapsgame.js"></script>
+    <script src="./src/randomQuoteGenerator/randQuoteGenerator.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
+    ></script>
+      <script>
+      function makeDreamComeTrue() {
+        alert("Welcome! Combine Development with Quality Assurance Testing 🚀");
+      }
+    </script>
+
+
