@@ -9,7 +9,7 @@ import {
   AnalysisText,
 } from "./stockAnalysisDashboard";
 import SpinnerMini from "../spinnerMini";
-import "./stockAnalysisDashboard";
+import "./stockAnalysisDashboard.css";
 import DashboardGrid from "./dashboardGrid";
 
 function StockAnalysisDashboard() {
