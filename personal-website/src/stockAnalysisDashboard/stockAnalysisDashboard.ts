@@ -6,7 +6,7 @@ export async function analyzeStock(stockSymbolToAnalyze: string) {
     return;
   }
   //Local host
-  // const url = `http://127.0.0.1:5000/analyze-stock/${stockSymbolToAnalyze}`;
+  //const url = `http://127.0.0.1:5000/analyze-stock/${stockSymbolToAnalyze}`;
 
   //Subnet
   //const url = `http://10.157.178.163:5000/analyze-stock/${stockSymbolToAnalyze}`;
